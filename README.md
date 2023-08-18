@@ -1,9 +1,11 @@
 # plotly assignment
 
 STEPS TO RUN THE TESTS -- using CLI Commands
-1. npm install
+1. clone the repository
+2. yarn install
+3. yarn e2e:run -- All the test cases will run
 
-STEPS TO RUN THE TESTS -- using Cypress Window
+![image](https://github.com/goyalvipul/plotly/assets/1950651/fad0c502-c4c5-46aa-ba78-f6e8f117beb7)
 
 
 **Framework Used:**
@@ -14,6 +16,12 @@ STEPS TO RUN THE TESTS -- using Cypress Window
    c. reports - contains mochawesome reports, autgenerated after each execution.
 3. Reports:
    a. Integrated "Mochawesome" reports with the framework, which will produce an HTML version of the results of the execution.
+4. config:
+   a. test.json : config file used to mentioned all the
+      Envrinmental values
+      Rereun numbers
+      Reporter
+      Env variables
    
 
 
