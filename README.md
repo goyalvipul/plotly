@@ -7,8 +7,14 @@ STEPS TO RUN THE TESTS -- using Cypress Window
 
 
 **Framework Used:**
-1. Used Cypress Framework
-2. Discarded POM Model for the assignment, as it acts as an Antipattern when it comes to Cypress.
+1. Cypress Framework
+2. Directory Structure:
+   a. e2e - contains the test cases
+   b. fixtures - contain the data, which can be used for Data Driven test cases.
+   c. reports - contains mochawesome reports, autgenerated after each execution.
+3. Reports:
+   a. Integrated "Mochawesome" reports with the framework, which will produce an HTML version of the results of the execution.
+   
 
 
 **Automated Test Case Details: **
@@ -37,5 +43,13 @@ STEPS TO RUN THE TESTS -- using Cypress Window
      * Validates the GREEN Color Border is shown on the Test Analytics.
      * ALSO validates the GREEN Color is not shown on SMART ORCHESTRATION, to ensure that the circle is ONLY shown on the section in the VIEW
     
+
+**Issue Felt with the Cypress Application - **
+* When the Cypress tool is trying to click on the Header elements like Product, Company - they are mispositioning, giving out false failures.
+**How I handled the issue**
+* FIRST -- Added Retries - 2. which retry the test case.
+* Each test is coded as independent to each other. So second try passes it.
+* SECOND -- Added "center" to the click action of cypress. This sub-action makes sure it is clicking in the center of the element, which makes it easy to click.
+
 
 
