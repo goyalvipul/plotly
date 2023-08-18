@@ -26,7 +26,8 @@ context('Validating the Text on Homepage', () => {
      * The test also validates the Abour us Page is opened when the link is clicked.
      */
     it('verify user is able to click "Company" link and click on "About Us"', () => {
-        cy.get("button#dropdownCompany").click()
+        // using "center" while clicking, as I noticed the Header in the website moves around while Cypress tries to click it, which creates a MISS and gives out a false failure. Center ensures that it is clicking the element core position.
+        cy.get("button#dropdownCompany").click("center")
         cy.contains("About Cypress").click()
         cy.get("main.grow h1").should("contain.text", "About us")
     });
@@ -50,7 +51,7 @@ context('Validating the Text on Homepage', () => {
      * Validates that after the click "Visual Review" page is opened.
      */
     it('verify the user is able to click on Product and Visual Reviews', () => {
-        cy.get("button#dropdownProduct").click()
+        cy.get("button#dropdownProduct").click("center")
         cy.get("a[href*='cloud#visual_reviews'] span").contains("Visual Reviews").click()
         cy.get("#visual_reviews").should('be.visible');
     });
@@ -69,7 +70,7 @@ context('Bonus Test Case', ()=>{
      * ALSO validates the GREEN Color is not shown on SMART ORCHESTRATION, to ensure that the circle is ONLY shown on the section in the VIEW
      */
     it('verify the user is able to scroll down "Test Analytics" section, which highlights the link in the top with GREEN CIRCLE around', () => {
-        cy.get("button#dropdownProduct").click()
+        cy.get("button#dropdownProduct").click("center")
         cy.get("a[href*='cloud#smart_orchestration'] span").contains("Smart Orchestration").click() 
         cy.get("section#test_analytics").scrollIntoView({top: 100, left: 0})
         cy.get("a[href='#test_analytics']").should('have.css', 'border-color', 'rgb(163, 231, 203)')
