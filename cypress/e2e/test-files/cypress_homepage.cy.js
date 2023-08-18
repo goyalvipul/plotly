@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 
 
-const data = require("../../fixtures/example")
-
 describe('Plotly Automation Assignment', () => {
 
 context('Validating the Text on Homepage', () => {
